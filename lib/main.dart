@@ -3,8 +3,7 @@ import 'Presentation/Screens/Counter/Counter_screen.dart';
 
 main() {
  runApp(const MemoGrellas());
-
-}
+ }
 
 class MemoGrellas extends StatefulWidget{
   const MemoGrellas({super.key});
@@ -18,11 +17,9 @@ class _MemoGrellasState extends State<MemoGrellas> {
   Widget build(BuildContext context) {
 
     return MaterialApp(
-      theme: ThemeData (useMaterial3: true, colorSchemeSeed: Colors.tealAccent),
+      theme: ThemeData (useMaterial3: true, colorSchemeSeed: Colors.lightBlue[300]),
       debugShowCheckedModeBanner:  false,
       home: CounterPresentation(),
-
-    ); 
-          
+      ); 
   }
 }
