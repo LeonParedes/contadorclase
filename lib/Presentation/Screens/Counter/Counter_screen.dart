@@ -1,3 +1,4 @@
+import 'package:aplicacion1/Componentes/custombutton.dart';
 import 'package:flutter/material.dart';
 
 class CounterPresentation extends StatefulWidget{
@@ -12,6 +13,7 @@ class _CounterPresentationState extends State<CounterPresentation> {
 
   Widget build(BuildContext context) {
    return  Scaffold(
+    appBar: AppBar(title:  Center(child: const Text('Counter')),  ),
     body: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -29,38 +31,43 @@ class _CounterPresentationState extends State<CounterPresentation> {
     floatingActionButton: Column(
       mainAxisAlignment : MainAxisAlignment.center,
       children: [
-      FloatingActionButton(onPressed: (){
+      CustomButton(
+        icono: Icons.exposure_minus_1_sharp,
+        onPressed: (){
         setState(() {
           if (_control<=0)
             {}
               else {
                 _control-=1;
                 }
-          });          
-        },
-      child: const Icon(Icons.exposure_minus_1_rounded)
-      ),
-        const SizedBox(height:20),
+          });
+        }),
+       const SizedBox(height:20),
       
-        FloatingActionButton(onPressed: (){
-          setState(() {
-            _control+=1;  
-            });          
-          }, 
-          child: const Icon(Icons.plus_one)
-        ),
-  const SizedBox(height:20),
-FloatingActionButton(onPressed: (){
+      
+      CustomButton(
+        icono: Icons.plus_one,
+        onPressed: (){
         setState(() {
-          _control=0;
-          });          
-        },
-      child: const Icon(Icons.refresh)
-      ),
+          _control +=1;
+          });
+        }),
+       const SizedBox(height:20),
+
+       
+      CustomButton(
+        icono: Icons.refresh_rounded,
+        onPressed: (){
+        setState(() {
+          _control = 0;
+          });
+        }),
+       const SizedBox(height:20),
       
       
+        
 ],//children
-            )
+      )
    );
   }
 }
